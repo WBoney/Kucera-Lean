@@ -69,7 +69,7 @@ theorem qassoc {W X Y Z : C}
   intro h
   exact Quotient.sound (R.assoc_mod f g h)
 
-def quotientCategory : Category C where
+instance quotientCategory : Category C where
   Hom := QHom (R := R)
   id := qid (R := R)
   comp := qcomp (R := R)
