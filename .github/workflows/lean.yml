@@ -10,6 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Generate Lake manifest
+        run: |
+          elan toolchain install "$(cat lean-toolchain)"
+          lake update
       - uses: leanprover/lean-action@v1
         with:
           use-mathlib-cache: true
